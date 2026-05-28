@@ -1,14 +1,25 @@
----
-version: "3"
+version: "3.9"
 services:
- devopsdb:
-   image: shaikmustafa/harikanew:dbimage
-   ports:
-     - "3306:3306"
+  devopsdb:
+    image: kvreddy9120/automation:db
+    ports:
+      - "3306:3306"
+    deploy:
+      replicas: 1
+    networks:
+      - mynetwork
 
- application:
-   image: shaikmustafa/harikanew:appimage
-   ports:
-     - "1111:8080"
-   depends_on:
-     - "devopsdb"
+  application:
+    image: kvreddy9120/automation:app
+    ports:
+      - "1111:8080"
+    deploy:
+      replicas: 3
+    depends_on:
+      - devopsdb
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
+    driver: overlay
