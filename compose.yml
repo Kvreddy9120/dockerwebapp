@@ -11,7 +11,7 @@ services:
   application:
     image: kvreddy9120/newcicd:app
     ports:
-      - "1111:8080"
+      - "1122:8080"
     deploy:
       replicas: 3
     networks:
