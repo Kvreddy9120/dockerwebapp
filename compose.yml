@@ -1,16 +1,8 @@
 version: "3.9"
 
 services:
-
   devopsdb:
     image: kvreddy9120/newcicd:db
-    deploy:
-      replicas: 1
-    networks:
-      - mynetwork
-
-  redis:
-    image: redis:7
     deploy:
       replicas: 1
     networks:
@@ -21,13 +13,9 @@ services:
     ports:
       - "1122:8080"
     deploy:
-      replicas: 3
+      replicas: 1
     depends_on:
       - devopsdb
-      - redis
-    environment:
-      - SPRING_DATA_REDIS_HOST=redis
-      - SPRING_DATA_REDIS_PORT=6379
     networks:
       - mynetwork
 
