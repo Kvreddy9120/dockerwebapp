@@ -11,7 +11,7 @@ services:
   application:
     image: kvreddy9120/newcicd:app
     ports:
-      - "1122:8080"
+      - "2222:8080"
     deploy:
       replicas: 1
     depends_on:
