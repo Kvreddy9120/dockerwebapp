@@ -1,7 +1,7 @@
 version: "3.9"
 services:
   devopsdb:
-    image: kvreddy9120/automation:db
+    image: kvreddy9120/newcicd:db
     ports:
       - "3306:3306"
     deploy:
@@ -10,7 +10,7 @@ services:
       - mynetwork
 
   application:
-    image: kvreddy9120/automation:app
+    image: kvreddy9120/newcicd:app
     ports:
       - "1111:8080"
     deploy:
