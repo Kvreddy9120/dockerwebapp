@@ -4,7 +4,7 @@ kind: Deployment
 metadata:
   name: devopsapp
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: swiggy
@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: cont-1
-          image: mustafaflm.azurecr.io/app:128
+          image: kvreddy9120/neweks:appimage
           ports:
             - containerPort: 8080
       imagePullSecrets:
