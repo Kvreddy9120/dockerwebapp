@@ -4,7 +4,7 @@ kind: StatefulSet
 metadata:
   name: devopsapp
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: db
@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: cont-1
-          image: mustafaflm.azurecr.io/db:129
+          image: kvreddy9120/neweks:dbimage
           ports:
             - containerPort: 3306
       imagePullSecrets:
