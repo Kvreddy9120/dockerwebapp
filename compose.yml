@@ -2,14 +2,14 @@ version: "3.9"
 
 services:
   devopsdb:
-    image: kvreddy9120/newcicd:db
+    image: kvreddy9120/sep:db
     deploy:
       replicas: 1
     networks:
       - mynetwork
 
   application:
-    image: kvreddy9120/newcicd:app
+    image: kvreddy9120/sep:app
     ports:
       - "1122:8080"
     deploy:
